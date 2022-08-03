@@ -48,13 +48,13 @@ Let's look at an example log entry for a Key policy : [Keys should have expirati
           "Result": "True",
           "Expression": "type",
           "ExpressionKind": "Field",
-          "ExpressionValue": "Microsoft.KeyVault.Data/vaults/keys",
-          "TargetValue": "Microsoft.KeyVault.Data/vaults/keys",
+          "ExpressionValue": "Microsoft.KeyVault/vaults/keys",
+          "TargetValue": "Microsoft.KeyVault/vaults/keys",
           "Operator": "Equals"
         },
         {
           "Result": "True",
-          "Expression": "Microsoft.KeyVault.Data/vaults/keys/attributes.expiresOn",
+          "Expression": "Microsoft.KeyVault/vaults/keys/attributes.exp",
           "ExpressionKind": "Field",
           "ExpressionValue": "******",
           "TargetValue": "False",
@@ -132,7 +132,7 @@ You'll see that it has a clause that causes the policy to only apply when "creat
 
 #### Latency on Azure policy assignment delete on Key Vault 
 
-Microsoft.KeyVault.Data: a deleted policy assignment can take up to 24 hours to stop being enforced. 
+Microsoft.KeyVault: a deleted policy assignment can take up to 24 hours to stop being enforced. 
 
 Mitigation: update the policy assignment's effect to 'Disabled'.
 
